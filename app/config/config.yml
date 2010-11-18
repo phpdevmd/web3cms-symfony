@@ -1,7 +1,7 @@
 app.config:
     charset:       UTF-8
     error_handler: null
-    csrf_secret:   xxxxxxxxxx
+    #csrf_secret:   xxxxxxxxxx
     router:        { resource: "%kernel.root_dir%/config/routing.yml" }
     validation:    { enabled: true, annotations: true }
     templating:
@@ -20,7 +20,17 @@ app.config:
 #    dbname:   xxxxxxxx
 #    user:     xxxxxxxx
 #    password: ~
-#doctrine.orm: ~
+doctrine.dbal:
+  default_connection:       default
+  connections:
+    default:
+      driver:               PDOMySql
+      dbname:               web3cms_r34
+      user:                 web3cmsuser
+      password:             web3cmspass
+      host:                 localhost
+      port:                 ~
+doctrine.orm: ~
 
 ## Swiftmailer Configuration
 #swiftmailer.config:
