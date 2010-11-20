@@ -20,16 +20,6 @@ app.config:
 #    dbname:   xxxxxxxx
 #    user:     xxxxxxxx
 #    password: ~
-doctrine.dbal:
-  default_connection:       default
-  connections:
-    default:
-      driver:               PDOMySql
-      dbname:               web3cms_r34
-      user:                 web3cmsuser
-      password:             web3cmspass
-      host:                 localhost
-      port:                 ~
 doctrine.orm: ~
 
 ## Swiftmailer Configuration

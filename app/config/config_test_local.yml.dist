@@ -1,0 +1,13 @@
+imports:
+    - { resource: config_test.yml }
+
+doctrine.dbal:
+  default_connection:       default
+  connections:
+    default:
+      driver:               PDOMySql
+      dbname:               web3cms_test
+      user:                 ~
+      password:             ~
+      host:                 localhost
+      port:                 ~

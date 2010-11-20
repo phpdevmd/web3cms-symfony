@@ -7,6 +7,8 @@ use Symfony\Component\DependencyInjection\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
+	const CONFIG_FORMAT = 'yml';
+
     public function registerRootDir()
     {
         return __DIR__;
@@ -51,14 +53,24 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        // use YAML for configuration
-        // comment to use another configuration format
-        $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
+    	$template = __DIR__.'/config/config_'.$this->getEnvironment().'%s.'.self::CONFIG_FORMAT;
+        $loader->load($this->getLocalConfigurationFile($template));
+    }
 
-        // uncomment to use XML for configuration
-        //$loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.xml');
+    /**
+     * Returns the config_{environment}_local.yml file or 
+     * the default config_{environment}.yml if it does not exist.
+     * Useful to override development password.
+     *
+     * @param string The configuration file template
+     * @return string The configuration file path
+     */
+    protected function getLocalConfigurationFile($template)
+    {
+        if(!file_exists($file = sprintf($template, '_local'))) {
+            $file = sprintf($template, '');
+        }
 
-        // uncomment to use PHP for configuration
-        //$loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.php');
+        return $file;
     }
 }

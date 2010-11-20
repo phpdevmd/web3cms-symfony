@@ -1,0 +1,13 @@
+imports:
+    - { resource: config_dev.yml }
+
+doctrine.dbal:
+  default_connection:       default
+  connections:
+    default:
+      driver:               PDOMySql
+      dbname:               web3cms_dev
+      user:                 ~
+      password:             ~
+      host:                 localhost
+      port:                 ~

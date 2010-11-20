@@ -1,22 +1,31 @@
 README
 ======
 
+Web3CMS - CMS & ProjectMS (in progress) based on Symfony 2 Framework
+
+Installation
+------------
+
+$ git clone git://github.com/phpdevmd/web3cms-symfony.git
+
+Configuration
+-------------
+
+Edit /app/config/config_prod_local.yml.dist and save as config_prod_local.yml
+
+Start Using
+-----------
+
+Open in your browser http://localhost/web3cms-symfony/web/
+
+
+
 What is Symfony?
 ----------------
 
 Symfony is a PHP 5.3 full-stack web framework. It is written with speed and
 flexibility in mind. It allows developers to built better and easy to maintain
 websites with PHP.
-
-Symfony can be used to develop all kind of websites, from your personal blog
-to high traffic ones like Dailymotion or Yahoo! Answers.
-
-High Performance
-----------------
-
-Built with performance in mind, Symfony 2 is one of the fastest PHP
-frameworks. It is up to 3 times faster than symfony 1.4 or Zend Framework 1.10
-and consumes half the memory.
 
 Requirements
 ------------
