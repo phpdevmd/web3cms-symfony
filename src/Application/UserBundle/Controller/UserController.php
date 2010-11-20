@@ -25,7 +25,7 @@ class UserController extends Controller
             $form->bind($this->get('request')->get('login'));
 
             if ($form->isValid()) {
-                // connect to db and authenticate
+                //  connect to db and authenticate
 
                 $this->get('request')->getSession()->setFlash('topSummary', '<strong>{screenName}</strong>, you have been successfully logged in.');
 
