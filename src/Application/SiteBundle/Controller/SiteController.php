@@ -8,8 +8,6 @@ use Application\SiteBundle\Entity;
 
 class SiteController extends Controller
 {
-    public $adminEmailAddress = 'Web3CMS Staff <phpdevmd@web3cms.com>';
-
     /**
      * Homepage
      */
@@ -37,7 +35,7 @@ class SiteController extends Controller
 
             if ($form->isValid()) {
                 $headers = "From: {$form['email']->getData()}\r\nReply-To: {$form['email']->getData()}";
-                @mail($this->adminEmailAddress, $form['subject']->getData(), $form['content']->getData(), $headers);
+                @mail($this->container->getParameter('adminEmailName').' <'.$this->container->getParameter('adminEmailAddress').'>', $form['subject']->getData(), $form['content']->getData(), $headers);
 
                 $this->get('request')->getSession()->setFlash('topSummary', '<strong>Thank you</strong> for contacting us. We will respond to you as soon as possible.');
 

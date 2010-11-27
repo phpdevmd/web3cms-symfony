@@ -30,14 +30,14 @@ class Contact
      */
     public $subject;
 
-	/**
-	 * Captcha code. Verify person who contacts us is a human.
-	 */
+    /**
+     * Captcha code. Verify person who contacts us is a human.
+     */
     //public $verifyCode; // TODO: add captcha
 
-	/**
-	 * Validators for this entity.
-	 */
+    /**
+     * Validators for this entity.
+     */
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
         $metadata->addPropertyConstraint('content', new Constraints\NotBlank());

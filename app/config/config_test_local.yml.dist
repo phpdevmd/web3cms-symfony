@@ -11,3 +11,8 @@ doctrine.dbal:
       password:             ~
       host:                 localhost
       port:                 ~
+
+parameters:
+  adminEmailAddress:        name@domain.com
+  adminEmailName:           WebSite Admin
+  copyrightBy:              My Company
