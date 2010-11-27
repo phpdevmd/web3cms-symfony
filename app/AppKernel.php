@@ -18,6 +18,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new Symfony\Bundle\TwigBundle\TwigBundle(),
 
             // enable third-party bundles
             new Symfony\Bundle\ZendBundle\ZendBundle(),
@@ -25,12 +26,12 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
             //new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
             //new Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle(),
-            //new Symfony\Bundle\TwigBundle\TwigBundle(),
 
-            // register your bundles
+            // register your common bundles
             new Bundle\DoctrineUserBundle\DoctrineUserBundle(),
 
-            // register app bundles
+            // register your app bundles
+            new Application\HelloBundle\HelloBundle(),
             new Application\SiteBundle\SiteBundle(),
             new Application\UserBundle\UserBundle(),
         );

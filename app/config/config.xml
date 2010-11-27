@@ -17,13 +17,12 @@
     <app:config csrf-secret="xxxxxxxxxx" charset="UTF-8" error-handler="null">
         <app:router resource="%kernel.root_dir%/config/routing.xml" />
         <app:validation enabled="true" annotations="true" />
-        <app:session default-locale="en" lifetime="3600" />
+        <app:templating assets_version="SomeVersionScheme" />
+        <app:session default-locale="en" lifetime="3600" auto-start="true" />
     </app:config>
 
     <!-- Twig Configuration -->
-    <!--
-    <twig:config auto_reload="true" />
-    -->
+    <twig:config debug="%kernel.debug%" strict-variables="%kernel.debug%" />
 
     <!-- Doctrine Configuration -->
     <!--

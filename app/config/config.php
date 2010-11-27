@@ -11,14 +11,16 @@ $container->loadFromExtension('app', 'config', array(
     ),
     'session' => array(
         'default_locale' => "en",
-        'lifetime' => "3600",
+        'lifetime'       => "3600",
+        'auto_start'     => true,
     ),
 ));
 
 // Twig Configuration
-/*
-$container->loadFromExtension('twig', 'config', array('auto_reload' => true));
-*/
+$container->loadFromExtension('twig', 'config', array(
+    'debug'            => '%kernel.debug%',
+    'strict_variables' => '%kernel.debug%',
+));
 
 // Doctrine Configuration
 /*

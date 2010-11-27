@@ -1,3 +1,6 @@
+hello:
+    resource: HelloBundle/Resources/config/routing.yml
+
 site:
     resource: SiteBundle/Resources/config/routing.yml
 
